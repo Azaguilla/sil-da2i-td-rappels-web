@@ -1,0 +1,1 @@
+<footer><p>Copyright 2018 Tous droits réservés Martin Laurie<p></footer>
