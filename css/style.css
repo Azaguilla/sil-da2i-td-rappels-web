@@ -97,6 +97,15 @@ h2
 *     Contenu
 *
 */
+.liste
+{
+	display:flex;
+	flex-direction: column;
+	box-shadow:0px 0px 5px #ccc;
+	background:white;
+	width: 80%;
+    margin: auto;
+}
 
 main.main-film
 {

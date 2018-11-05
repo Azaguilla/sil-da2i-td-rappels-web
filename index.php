@@ -16,67 +16,66 @@ $data_acteurs = $query_acteurs->fetchAll();
 	<?php getBlock('block/header.php'); ?>
 	
 	<body>
+		<main class="liste">
+    		<article>
+        		<section>
+            		<h1>Les films</h1>
+            		
+            		<ul>
+            		<?php 
+            		foreach($data_films as $film)
+            		{
+            		    ?>
+            		    <li>
+                		    <a href="movie.php?id=<?php echo $film["id"]; ?>">
+                		    	<?php echo $film["title"]; ?>
+                		    </a>
+            		    </li>
+            		<?php 
+            		}
+            		?>
+            		</ul>
+        		</section>
+        		
+        		<section>
+            		<h1>Les acteurs</h1>
+            		<ul>
+            		<?php 
+            		foreach($data_acteurs as $acteur)
+            		{
+            		    ?>
+            		    <li>
+                		    <a href="person.php?id=<?php echo $acteur["id"]; ?>">
+                		    	<?php echo $acteur["lastname"]." ".$acteur["firstname"]; ?>
+                		    </a>
+            		    </li>
+            		<?php 
+            		}
+            		?>
+            		
+            		</ul>
+        		</section>
+        		
+        		<section>
+            		<h1>Les réalisateurs</h1>
+            		<ul>
+            		<?php 
+            		foreach($data_realisateurs as $realisateur)
+            		{
+            		    ?>
+            		    <li>
+                		    <a href="person.php?id=<?php echo $realisateur["id"]; ?>">
+                		    	<?php echo $realisateur["lastname"]." ".$realisateur["firstname"]; ?>
+                		    </a>
+            		    </li>
+            		<?php 
+            		}
+            		?>
+            		
+            		</ul>
+        		</section>
+    		</article>
 		
-		<?php 
-			getBlock('block/menu.php');
-		?>
-		<main class="realisateur">
-		<section>
-    		<h1>Les films</h1>
-    		
-    		<ul>
-    		<?php 
-    		foreach($data_films as $film)
-    		{
-    		    ?>
-    		    <li>
-        		    <a href="movie.php?id=<?php echo $film["id"]; ?>">
-        		    	<?php echo $film["title"]; ?>
-        		    </a>
-    		    </li>
-    		<?php 
-    		}
-    		?>
-    		</ul>
-		</section>
-		
-		<section>
-    		<h1>Les acteurs</h1>
-    		<ul>
-    		<?php 
-    		foreach($data_acteurs as $acteur)
-    		{
-    		    ?>
-    		    <li>
-        		    <a href="movie.php?id=<?php echo $acteur["id"]; ?>">
-        		    	<?php echo $acteur["lastname"]." ".$acteur["firstname"]; ?>
-        		    </a>
-    		    </li>
-    		<?php 
-    		}
-    		?>
-    		
-    		</ul>
-		</section>
-		
-		<section>
-    		<h1>Les réalisateurs</h1>
-    		<ul>
-    		<?php 
-    		foreach($data_realisateurs as $realisateur)
-    		{
-    		    ?>
-    		    <li>
-        		    <a href="movie.php?id=<?php echo $realisateur["id"]; ?>">
-        		    	<?php echo $realisateur["lastname"]." ".$realisateur["firstname"]; ?>
-        		    </a>
-    		    </li>
-    		<?php 
-    		}
-    		?>
-    		
-    		</ul>
-		</section>
 		</main>
 		
 		<?php 
