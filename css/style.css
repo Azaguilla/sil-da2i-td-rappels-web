@@ -17,6 +17,7 @@ body
 	flex-direction: column;
 	font-family: 'Open Sans', sans-serif;
 	background:#eee;
+	min-height: 100vh;
 }
 
 a,
@@ -40,6 +41,11 @@ h1, h2, h3, h4
 h2
 {
 	color :#14D456;
+}
+
+ul
+{
+	list-style:none;
 }
 
 /*
@@ -105,6 +111,18 @@ h2
 	background:white;
 	width: 80%;
     margin: auto;
+	flex:1;
+}
+
+.content-liste
+{
+	padding:20px;
+}
+
+.titre-index
+{
+	text-align:center;
+	margin-bottom:100px;
 }
 
 main.main-film
@@ -154,6 +172,7 @@ div.underline
 	margin:5px;
 	background:#14D456;
 	align-self: center;
+	margin:auto;
 }
 /* le realisateur */
 .real

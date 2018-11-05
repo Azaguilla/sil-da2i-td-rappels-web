@@ -16,10 +16,17 @@ $data_acteurs = $query_acteurs->fetchAll();
 	<?php getBlock('block/header.php'); ?>
 	
 	<body>
+		<?php 
+			getBlock('block/menu.php');
+		?>
 		<main class="liste">
-    		<article>
+    		<article class="content-liste">
+        		<div class="titre-index">
+            		<h1>INFORMATIONS PAR CATEGORIE</h1>
+        			<div class="underline titre-index"></div>
+        		</div>
         		<section>
-            		<h1>Les films</h1>
+            		<h2>Les films</h2>
             		
             		<ul>
             		<?php 
@@ -38,7 +45,7 @@ $data_acteurs = $query_acteurs->fetchAll();
         		</section>
         		
         		<section>
-            		<h1>Les acteurs</h1>
+            		<h2>Les acteurs</h2>
             		<ul>
             		<?php 
             		foreach($data_acteurs as $acteur)
@@ -57,7 +64,7 @@ $data_acteurs = $query_acteurs->fetchAll();
         		</section>
         		
         		<section>
-            		<h1>Les réalisateurs</h1>
+            		<h2>Les réalisateurs</h2>
             		<ul>
             		<?php 
             		foreach($data_realisateurs as $realisateur)
