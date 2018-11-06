@@ -2,9 +2,9 @@
 	<nav>
 		<div class="page-title"><a href="index.php" >Index du site</a></div>
 		<ul class="menu">
-			<li><a href="director.php" >Réalisateur</a></li>
+			<li><a href="#" >Réalisateur</a></li>
 			<li>
-				<a href="blocks/advanced_search.php" >Acteurs</a>
+				<a href="#" >Acteurs</a>
 			</li>
 		</ul>
 	</nav>

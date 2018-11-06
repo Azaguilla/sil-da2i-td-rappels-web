@@ -3,9 +3,9 @@
 $bdd = connexion();
 
 
-$query_films = $bdd->query('SELECT id, title FROM movie');
-$query_acteurs = $bdd->query('SELECT person.id, person.lastname, person.firstname FROM person, moviehasperson WHERE moviehasperson.role = "Acteur" AND person.id = moviehasperson.idPerson');
-$query_realisateurs = $bdd->query('SELECT person.id, person.lastname, person.firstname FROM person, moviehasperson WHERE moviehasperson.role = "Réalisateur" AND person.id = moviehasperson.idPerson');
+$query_films = $bdd->query('SELECT DISTINCT id, title FROM movie');
+$query_acteurs = $bdd->query('SELECT DISTINCT person.id, person.lastname, person.firstname FROM person, moviehasperson WHERE moviehasperson.role = "Acteur" AND person.id = moviehasperson.idPerson');
+$query_realisateurs = $bdd->query('SELECT DISTINCT person.id, person.lastname, person.firstname FROM person, moviehasperson WHERE moviehasperson.role = "Réalisateur" AND person.id = moviehasperson.idPerson');
 $data_films  = $query_films->fetchAll();
 $data_realisateurs = $query_realisateurs->fetchAll();
 $data_acteurs = $query_acteurs->fetchAll();

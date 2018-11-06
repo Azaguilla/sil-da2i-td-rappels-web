@@ -1,6 +1,15 @@
 <head>
 	<meta charset="UTF-8">
-	<title>Le Seigneur des Anneaux : La Communauté de l'Anneau</title>
+	<title><?php 
+	if(!empty($data))
+	{
+	    echo $data;
+	}
+	else
+	{
+	   echo "Recueil des films";
+	}
+	?></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/director.css">
 </head>
