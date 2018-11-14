@@ -1,15 +1,28 @@
-<?php 
+<?php
+
+include "classes/Movie.php";
+
 $id_film = $_GET['id'];
 
 
 $bdd = connexion();
 
+$test = new Movie();
+echo "<pre>";
+var_dump($test->getBaseInfos($id_film));
+echo "</pre>";
 
-$query_infos_film = $bdd->query('SELECT * 
+$film = new Movie();
+$data_infos_film  = $film->getBaseInfos($id_film);
+$data_realisateur = $query_realisateur->fetchAll();
+$data_acteurs = $query_acteurs->fetchAll();
+
+
+$query_infos_film = $bdd->query("SELECT * 
                                 FROM picture, moviehaspicture, movie 
                                 WHERE movie.id = moviehaspicture.idMovie 
                                 AND moviehaspicture.idPicture = picture.id 
-                                AND movie.id = "'.$id_film.'"');
+                                AND movie.id = \"'.$id_film.'\"");
 $query_acteurs = $bdd->query('SELECT *
                         FROM person, picture, personhaspicture, movie, moviehasperson
                         WHERE movie.id = moviehasperson.idMovie
