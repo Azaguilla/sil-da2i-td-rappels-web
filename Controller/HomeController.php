@@ -23,11 +23,13 @@ class HomeController extends LordController
         $movies = $movieManager->getAllMovies();
         $actors = $actorManager->getAllActors();
         $directors = $directorManager->getAllDirectors();
+        $data_page_title = "Recueil des films";
 
         $data = array(
             "movies" => $movies,
             "actors" => $actors,
-            "directors" => $directors
+            "directors" => $directors,
+            "page_title" => $data_page_title
         );
         $this->getBlock("View/home.php", $data);
     }

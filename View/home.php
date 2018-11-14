@@ -8,7 +8,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<?php HomeController::getBlock('View/header.php'); ?>
+	<?php HomeController::getBlock('View/header.php', $data["page_title"]); ?>
 
 	<body>
 		<?php
@@ -29,7 +29,7 @@
             		{
             		    ?>
             		    <li>
-                		    <a href="movie.php?id=<?php echo $film["id"]; ?>">
+                		    <a href="movie/<?php echo $film["id"]; ?>">
                 		    	<?php echo $film["title"]; ?>
                 		    </a>
             		    </li>
