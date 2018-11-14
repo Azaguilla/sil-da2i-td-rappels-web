@@ -1,6 +1,6 @@
 <?php
 
-include "classes/Movie.php";
+include "Model/Movie.php";
 
 $id_film = $_GET['id'];
 
@@ -71,13 +71,13 @@ foreach ($persons as $person)
 
 <!DOCTYPE html>
 <html lang="en">
-	<?php getBlock('block/header.php', $data_page_title); ?>
+	<?php getBlock('View/header.php', $data_page_title); ?>
 	
 	<body>
 		<?php 
-			getBlock('block/menu.php');
-			getBlock('block/infos_film.php', $datas);
-			getBlock('block/footer.php');
+			getBlock('View/menu.php');
+			getBlock('View/infos_film.php', $datas);
+			getBlock('View/footer.php');
 		?>
 	</body>
 </html>

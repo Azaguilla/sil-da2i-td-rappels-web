@@ -33,12 +33,12 @@ $data_page_title = $data_person['data_person'][0]["firstname"]." ".$data_person[
 
 <!DOCTYPE html>
 <html lang="en">
-	<?php getBlock('block/header.php', $data_page_title); ?>
+	<?php getBlock('View/header.php', $data_page_title); ?>
 	<body>
 	<?php 
-			getBlock('block/menu.php');
-			getBlock('block/infos_personne.php', $data_person);
-			getBlock('block/footer.php');
+			getBlock('View/menu.php');
+			getBlock('View/infos_personne.php', $data_person);
+			getBlock('View/footer.php');
 		?>
 		
 	</body>

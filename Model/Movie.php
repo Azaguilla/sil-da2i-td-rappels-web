@@ -37,8 +37,7 @@ class Movie
     {
         $bdd = $this->dbConnect();
 
-        $query = $bdd->query("SELECT id, title
-                                FROM movie");
+        $query = $bdd->query("SELECT DISTINCT id, title FROM movie");
 
         $data_film = $query->fetchAll();
 

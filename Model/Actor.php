@@ -1,17 +1,17 @@
 <?php
 
-include "Person.php";
+include_once "Person.php";
 
-class Director extends Person
+class Actor extends Person
 {
-    public function getAllDirectors()
+    public function getAllActors()
     {
         $bdd = $this->dbConnect();
 
-        $query = $bdd->query("SELECT * 
-                                FROM picture, moviehaspicture, movie 
-                                WHERE movie.id = moviehaspicture.idMovie 
-                                AND moviehaspicture.idPicture = picture.id");
+        $query = $bdd->query("SELECT DISTINCT person.id, person.lastname, person.firstname 
+        FROM person, moviehasperson 
+        WHERE moviehasperson.role = \"Acteur\" 
+        AND person.id = moviehasperson.idPerson");
 
         $data = $query->fetchAll();
 

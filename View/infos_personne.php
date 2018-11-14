@@ -28,6 +28,6 @@
 			<h2>Bibliographie</h2>
 			<p><?php echo $data['data_person'][0]["biography"] ?></p>
 		</section>
-		<?php getBlock('block/filmographie.php', $data['data_filmo_img']); ?>
+		<?php getBlock('View/filmographie.php', $data['data_filmo_img']); ?>
 	</article>
 </main>

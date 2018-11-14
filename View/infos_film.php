@@ -40,7 +40,7 @@
 			<section class="acteurs">
 				<h2>Acteurs principaux</h2>
 				<div class="contenu-acteur">
-				<?php getBlock('block/apercu.php', $data["data_acteurs"]); ?>
+				<?php getBlock('View/apercu.php', $data["data_acteurs"]); ?>
 				</div>
 			</section>
 		</article>
