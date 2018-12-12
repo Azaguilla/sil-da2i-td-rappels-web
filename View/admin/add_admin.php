@@ -12,7 +12,7 @@
     <body>
         <header class="header-menu">
             <nav>
-                <div class="page-title"><a href="index.php" >Index du site</a></div>
+                <div class="page-title"><a href="/travaux/sil-da2i-td-rappels-web" >Index du site</a></div>
                 <ul class="menu">
                     <li><a href="#" >Réalisateur</a></li>
                     <li>
@@ -24,7 +24,8 @@
         <main class="main-film">
             <section>
                 <h2>Ajouter un film</h2>
-                <form method="post" action="/travaux/sil-da2i-td-rappels-web/add/">
+                <div id="message"></div>
+                <form id="formAddMovie" method="post" action="/travaux/sil-da2i-td-rappels-web/add/">
                     <p>
                         <label>
                             Titre
@@ -49,9 +50,30 @@
                         </label>
                         <input name="note" type="number" placeholder="5">
                     </p>
-                <input type="submit" value="Enregistrer">
+               <!-- <input type="submit" value="Enregistrer"> -->
+                    <div role="submit" id="subAddMov">Enregistrer</div>
                 </form>
             </section>
         </main>
+    <script>
+        $(document).ready(function () {
+            //ajax avec .ajax
+            $("#subAddMov").on("click", function () {
+
+                var form = $("#formAddMovie");
+                console.log(form);
+                $.ajax({
+                    type: "POST",
+                    url: form.attr("action"),
+                    data: form.serialize()
+                })
+                    .fail(function () {
+                        $("#message").html("Une erreur s'est produite.").attr("class", "msg-info");
+                    }).done(function (response) {
+                    $("#message").html(response).attr("class", "msg-info");
+                });
+            });
+        });
+    </script>
     </body>
 </html>
