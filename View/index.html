@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/director.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="header-menu">
+    <nav>
+        <div class="page-title"><a href="index.php">Index du site</a></div>
+        <ul class="menu">
+            <li><a href="#">Réalisateur</a></li>
+            <li>
+                <a href="#">Acteurs</a>
+            </li>
+            <li>
+                <a href="admin/add_admin.php">Ajouter un film</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main-film">
+    <aside class="real">
+        <h2>Le Réalisateur</h2>
+        <div class="underline"></div>
+        <figure>
+            <img src="../img/peter-jackson.jpg" alt="">
+            <figcaption>Le réalisateur Peter Jackson</figcaption>
+        </figure>
+        <h3>Peter Jackson</h3>
+        <a class="savoir" href="#">En savoir plus</a>
+    </aside>
+
+
+    <article class="film">
+        <div>
+            <button id="fadeImg">Effacer les images</button>
+            <button id="hideAside">Masquer les menus latéraux</button>
+            <button id="toggleMenu">S'amuser avec le menu</button>
+            <a href="admin/add_admin.php" id="">Ajouter un film</a>
+        </div>
+        <h1> Le Seigneur des anneaux</h1>
+        <div class="underline"></div>
+        <section class="infos-film">
+            <div class="image-film">
+                <figure>
+                    <img src="../img/le_seigneur_des_anneaux_la_communaute_de_l_anneau.jpg" alt="">
+                    <figcaption>Affiche du film le Seigneur des anneaux</figcaption>
+                </figure>
+            </div>
+            <div class="infos">
+                <p><span class="bold">Date de sortie</span> :
+                    <time>2001</time>
+                </p>
+                <p><span class="bold">Acteurs pricipaux</span> : Ellijah Wood, Sean Austin</p>
+                <p><span class="bold">Note </span>:
+                    <meter min=0 max=5 value=4/>
+                    4</meter>4/5
+                </p>
+            </div>
+        </section>
+        <section class="synopsis">
+            <h2>Synopsis</h2>
+            <p>
+                Le synopsis </p>
+        </section>
+        <section class="acteurs">
+            <h2>Acteurs principaux</h2>
+            <div class="contenu-acteur">
+                <div class="bloc-acteur">
+                    <figure>
+                        <img src="../img/ellijah_wood.png" alt="">
+                        <figcaption>L'acteur Ellijah Wood</figcaption>
+                    </figure>
+                    <p>Ellijah Wood</p>
+                </div>
+            </div>
+        </section>
+        <!--<section>
+            <h2>Foire aux Questions</h2>
+            <dl id="faq">
+                <dt id="q1">Question 1 <span class="click" id="clickq1">0</span></dt>
+                <dd id="rq1">
+                    <dl>
+                        <dt>réponse 1 partie 1</dt>
+                        <dd>détail 1</dd>
+                        <dt>réponse 1 partie 2</dt>
+                        <dd>détail 2</dd>
+                    </dl>
+                </dd>
+                <dt id="q2">Question 2 <span class="click" id="clickq2">0</span></dt>
+                <dd id="rq2">
+                    <dl>
+                        <dt>réponse 2 partie 1</dt>
+                        <dd>détail 1</dd>
+                        <dt>réponse 2 partie 2</dt>
+                        <dd>détail 2</dd>
+                    </dl>
+                </dd>
+                <dt id="q3">Question 3 <span class="click" id="clickq3">0</span></dt>
+                <dd id="rq3">
+                    <dl>
+                        <dt>réponse 3 partie 1</dt>
+                        <dd>détail 1</dd>
+                        <dt>réponse 3 partie 2</dt>
+                        <dd>détail 2</dd>
+                    </dl>
+                </dd>
+                <dt id="q4">Question 4 <span class="click" id="clickq4">0</span></dt>
+                <dd id="rq4">
+                    <dl>
+                        <dt>réponse 4 partie 1</dt>
+                        <dd>détail 1</dd>
+                        <dt>réponse 4 partie 2</dt>
+                        <dd>détail 2</dd>
+                    </dl>
+                </dd>
+            </dl>
+        </section>-->
+
+    </article>
+    <aside class="real">
+        <h2>FAQ</h2>
+        <div class="underline"></div>
+        <div id="faqchargee">
+            <a id="charger" class="savoir" href="#">Charger</a>
+            <div id="chargement">
+                <img src="../img/chargement.gif">
+            </div>
+        </div>
+    </aside>
+</main>
+<script>
+    $(document).ready(function () {
+        $("#hideAside").on("click", function () {
+            $("aside").hide(500);
+        });
+
+        $("#fadeImg").on("click", function () {
+            $("img").hide(500);
+        });
+
+        $("#toggleMenu").on("click", function () {
+            $("nav").slideToggle(500)
+        });
+
+
+        // ajax avec .load
+        /*$("#charger").on("click", function () {
+            $("#faqchargee").load('faq.php #faq', function (reponse, status, xhr) {
+                if (status == 'error') {
+                    $('#error').html('Error: ' + xhr.status + ' ' + xhr.statusText);
+                }
+                else
+                {
+                    dtClick();
+                }
+            });
+        })*/
+
+        //ajax avec .ajax
+        $("#charger").on("click", function () {
+            $("#chargement").css("display", "block");
+            $("#charger").css("display", "none");
+            $.ajax({
+                url:'faq.php #faq',
+                success : function (response, status) {
+                    if (status == 'error') {
+                        $('#error').html('Error: ' + xhr.status + ' ' + xhr.statusText);
+                    } else {
+
+
+                        var faq = $(jQuery.parseHTML(response)).find("#faq");
+                        $("#faqchargee").html(faq);
+                        dtClick();
+                    }
+                }
+            });
+        })
+    });
+
+    function dtClick(){
+        //clique sur question faq
+        $("dt").data("clicks", {
+            nvbclick: 0
+        });
+
+        $("dt").on("click", function (event) {
+            event.stopPropagation();
+            $(this).next().slideToggle(500);
+            //ajouter le nb de click
+
+            if ($(this).attr("id") != null) {
+                var elem = $(this).attr("id");
+            } else {
+                var elem = $(this).parent().parent().prev().attr("id");
+
+            }
+            var nbclick = $("#" + elem).data("clicks").nvbclick;
+            nbclick++;
+
+
+            $("#" + elem).data("clicks", {
+                nvbclick: nbclick
+            });
+
+            var totclick = $("#" + elem).data("clicks").nvbclick;
+            $("#click" + elem).html(totclick);
+
+            // trier les questions
+            var toutdt = $("dt");
+
+            var q = [];
+
+            for (i = 0; i < toutdt.length; i++) {
+                if ($(toutdt[i]).attr("id") != null) {
+                    q.push($(toutdt[i]));
+                }
+            }
+
+            q.sort(compare);
+            console.log(q);
+
+            for (i = 0; i < q.length; i++) {
+                var idelem = $(q[i]).attr("id")
+                var titleelem = $("#" + idelem);
+                var repelem = $("#r" + idelem);
+
+                $("#faq").remove("#r" + idelem);
+                $("#faq").remove("#" + idelem);
+
+                $("#faq").prepend(repelem);
+                $("#faq").prepend(titleelem);
+            }
+
+        });
+    }
+
+    function compare(a, b) {
+        if (a.data("clicks").nvbclick < b.data("clicks").nvbclick)
+            return -1;
+        if (a.data("clicks").nvbclick >= b.data("clicks").nvbclick)
+            return 1;
+
+        return 0;
+    }
+</script>
+
+</body>
+
+</html>

@@ -119,10 +119,28 @@ class Movie
         return $actor;
     }
 
+    public function addMovie($donnees)
+    {
+        $title = $donnees['title'];
+        $rating = $donnees['note'];
+        $synopsis = $donnees['synopsis'];
+        $date = donnees['sortie'];
+
+        $bdd = $this->dbConnect();
+
+        $stmt = $bdd->prepare("INSERT INTO movie (title, releaseDate, synopsis, rating) VALUES (:title, :releaseDate, :synopsis, :rating)");
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':releaseDate', $date);
+        $stmt->bindParam(':synopsis', $synopsis);
+        $stmt->bindParam(':rating', $rating);
+
+        $stmt->execute();
+    }
+
     private function dbConnect()
     {
         $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-        // Informations de connection a la BDD
+        // Informations de connexion a la BDD
         $host = 'localhost';
         $dbname = 'film';
         $user = 'root';

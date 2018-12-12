@@ -9,6 +9,8 @@
             <h3>Peter Jackson</h3>
             <a class="savoir" href="person.php?id=<?php echo $data["data_realisateur"][0]["idPerson"]; ?>">En savoir plus</a>
 		</aside>
+
+
 		<article class="film">
 			<h1><?php echo $data["data_infos_film"][0]["title"]; ?></h1>
 			<div class="underline"></div>

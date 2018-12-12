@@ -6,6 +6,9 @@
 			<li>
 				<a href="#" >Acteurs</a>
 			</li>
+            <li>
+                <a href="admin/">Ajouter un film</a>
+            </li>
 		</ul>
 	</nav>
 </header>

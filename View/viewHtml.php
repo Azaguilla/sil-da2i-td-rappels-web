@@ -8,13 +8,14 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<?php getBlock('View/header.php', $data_page_title); ?>
+	<?php MovieController::getBlock('View/header.php', "test"); ?>
 
 	<body>
 		<?php
-			getBlock('View/menu.php');
-			getBlock('View/infos_film.php', $datas);
-			getBlock('View/footer.php');
+            MovieController::getBlock('View/menu.php');
+            MovieController::getBlock('View/infos_film.php', $data);
+            MovieController::getBlock('View/footer.php');
 		?>
+
 	</body>
 </html>

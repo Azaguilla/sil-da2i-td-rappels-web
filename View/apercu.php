@@ -7,7 +7,7 @@ foreach($data as $acteur)
    		 <img src="<?php echo $acteur["path"]; ?>" alt="<?php echo $acteur["legend"]; ?>">
     	<figcaption><?php echo $acteur["lastname"]." ".$acteur["firstname"]; ?></figcaption>
     </figure>
-    <p><?php echo $acteur["lastname"].$acteur["firstname"]; ?></p>
+    <p><?php echo $acteur["lastname"].$acteur["firstname"]; ?></p>s
 </div>
 <?php 
 }
